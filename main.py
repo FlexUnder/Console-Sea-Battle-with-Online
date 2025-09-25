@@ -236,7 +236,7 @@ def shooting_phase(field, connection, is_server):  # Фаза выстрелов
                         xd, yd = coords[0], coords[1]
                         field[yd][xd] = '🛟'
                         # time.sleep(0.1)
-                    send_data(connection, 'destroyed|' + json.dumps(replace))
+                    netcode.send_data(connection, 'destroyed|' + json.dumps(replace))
                     result = 'потопил судно'
                 turn_swap = False
             elif field[y][x] == '🌊':
@@ -327,4 +327,5 @@ def clear_console():
 
 
 if __name__ == '__main__':
+
     main()
