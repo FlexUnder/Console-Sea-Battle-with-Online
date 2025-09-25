@@ -211,7 +211,7 @@ def shooting_phase(field, connection, is_server):  # Фаза выстрелов
                 # time.sleep(0.5)
                 for coords in replace:
                     xd, yd = coords[0], coords[1]
-                    field_blind[yd][xd] = '🏳'
+                    field_blind[yd][xd] = '🚩'
                     open_water_area(xd, yd)
                     # time.sleep(0.1)
                 result = 'Убил!'
@@ -234,7 +234,7 @@ def shooting_phase(field, connection, is_server):  # Фаза выстрелов
                 else:
                     for coords in replace:
                         xd, yd = coords[0], coords[1]
-                        field[yd][xd] = '🏳'
+                        field[yd][xd] = '🚩'
                         # time.sleep(0.1)
                     netcode.send_data(connection, 'destroyed|' + json.dumps(replace))
                     result = 'потопил судно'
@@ -329,4 +329,5 @@ def clear_console():
 if __name__ == '__main__':
 
     main()
+
 
